@@ -15,8 +15,17 @@ const mindData = [
   {id: 3, body: `At some point, everything's gonna go south on you...everything's going to go south and you're going to say, this is it. This is how I end. Now you can either accept that, or you can get to work. That's all it is. You just begin. You do the math. You solve one problem... and you solve the next one... and then the next. And If you solve enough problems, you get to come home.`, author: 'The martian'},
 ]
 
+const bucketData = {
+  be: ['근육질 몸짱', '원어민과 자연스러운 대화'],
+  do: ['봉사활동', '천문학공부', '조각가', '발명가'],
+  have: ['나만의 공간(서재)', '화면 큰 맥북', '차'],
+  where: ['오로라 볼 수 있는 곳']
+}
+
 const App = () => {
   const [ mind, setMind ] = useState(mindData);
+  const [ bucket, setBucket ] = useState(bucketData);
+  
 
   // 전달받은 body, author를 mindData에 등록함
   const mindRegister = (body, author) => {
@@ -28,12 +37,21 @@ const App = () => {
     })
   }
 
+  // 전달받은 category, body를 bucketData에 등록함
+  const bucketRegister = (category, body) => {
+    setBucket((current)=>{
+      const newBucket = {...current};
+      // newBucket.category
+      return newBucket;
+    })
+  }
+
   return (
     <Routes>
       <Route path='/' element={<Layout />}>
         <Route index element={<Main />}></Route>
         <Route path='/mind' element={<Mind data={mind} mindRegister={mindRegister} />}></Route>
-        <Route path='/bucket' element={<Bucket />}></Route>
+        <Route path='/bucket' element={<Bucket data={bucket} bucketRegister={bucketRegister} />}></Route>
         <Route path='/vision' element={<Vision />}></Route>
         <Route path='/manda' element={<Manda />}></Route>
       </Route>
