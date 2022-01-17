@@ -11,18 +11,18 @@ const MindRegister = ({ onClick, onSubmit }) => {
 
     return (
         <form className='mindRegister' onSubmit={handleSubmit}>
-            <div className='body'>
-                <p>내용</p>
-                <textarea name="body"></textarea>
+            <div>
+                <p className='titles'>내용</p>
+                <textarea name="body" className='boxs' rows='10' required ></textarea>
             </div>
             <div className='author'>
-                <p>저자</p>
-                <input type="text" name="author" />
+                <p className='titles'>저자</p>
+                <input type="text" name="author" className='boxs' required />
             </div>
-            <div className="buttons">
-                <button type="sumbit">등록</button>
+            <div>
+                <button type="sumbit" className='btns'>등록</button>
                 {/* 취소시 모달창 닫기 */}
-                <button type="button" onClick={()=>{onClick()}}>취소</button>
+                <button type="button" className='btns' onClick={()=>{onClick()}}>취소</button>
             </div>
         </form>
     )

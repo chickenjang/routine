@@ -1,13 +1,30 @@
 .mindRegister {
     position: absolute;
-    background-color: black;
+    background-color: #E57B54;
     color: white;
     top: 5vh;
     left: 5vw;
     width: 90vw;
-    height: 90vh;
-
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align: center;
+    overflow: hidden;
+    & .titles {
+        font-size: 1.2rem;
+        margin-top: 3vh;
+    }
+    & .boxs {
+        width: 70vw;
+        line-height: 1.5rem;
+        overflow: scroll;
+    }
+    & .btns {
+        margin: 3vh 1rem;
+        width: 4rem;
+        height: 2rem;
+        border: none;
+        background-color: #ffffff;
+    }
 }

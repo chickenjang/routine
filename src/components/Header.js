@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Header = () => {
     return (
-        <HeaderStyle>스펀지의 2022년</HeaderStyle>
+        <HeaderStyle>Sponge in 2022</HeaderStyle>
     )
 }
 
@@ -13,4 +13,5 @@ const HeaderStyle = styled.h1`
     text-align: center;
     font-size: 2rem;
     padding: 1rem;
+    margin: 0;
 `

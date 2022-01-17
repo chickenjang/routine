@@ -10,7 +10,9 @@ const Layout = () => {
         <LayoutStyle>
             <Header />
             <Nav />
-            <Outlet />
+            <ContentStyle>
+                <Outlet />
+            </ContentStyle>
             <Footer />
         </LayoutStyle>
     )
@@ -23,6 +25,11 @@ const LayoutStyle = styled.div`
     height: 100vh;
     display: flex;
     flex-direction: column;
-    // justify-content: space-around;
+    justify-content: space-between;
     border: 1px solid red;
+`
+
+const ContentStyle = styled.div`
+    flex-basis: 90%;
+    overflow: scroll;
 `

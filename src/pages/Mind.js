@@ -8,9 +8,9 @@ const Mind = ({ data, mindRegister }) => {
 
     // mindData값 출력
     const items = data.map(item=>(
-        <div key={item.id}>
-            <div>{item.body}</div>
-            <div>- {item.author} -</div>
+        <div key={item.id} className='mindContent'>
+            <div className='mindBody'>{item.body}</div>
+            <div className='mindAuthor'>- {item.author} -</div>
         </div>
     ))
 
@@ -28,7 +28,7 @@ const Mind = ({ data, mindRegister }) => {
         <div>
             {items}
             {modalOn && <MindRegister onClick={handleClick} onSubmit={handleSubmit} />}
-            <button onClick={handleClick}>+++</button>
+            <button className='registerBtn' onClick={handleClick}>+</button>
         </div>
     )
 }
